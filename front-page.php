@@ -7,7 +7,7 @@
         $latest_post_query = new WP_Query(array(
             'post_type' => 'post',
             'posts_per_page' => 1)); 
-            //set_transient( 'latest_post_query', $latest_post_query, 2592 );
+            set_transient( 'latest_post_query', $latest_post_query, 2592 );
         //} 
         if ( false === ( $news_query = get_transient( 'news_query' ) ) ) {
             // It wasn't there, so regenerate the data and save the transient
@@ -15,7 +15,7 @@
                 'post_type' => 'post',
                 'offset' => 1,
                 'posts_per_page' => 6)); 
-               // set_transient( 'news_query', $news_query, 2592000 );
+               set_transient( 'news_query', $news_query, 2592 );
         }   
 
 ?>
