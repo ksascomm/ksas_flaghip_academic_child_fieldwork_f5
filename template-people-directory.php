@@ -51,7 +51,7 @@ Template Name: People Directory
 						'posts_per_page' => '-1'));        	
 			
 			if ($people_query->have_posts()) : ?>
-				<li class="person sub-head quicksearch-match <?php echo $filter_classes . ' ' . $role_classes; ?>"><h2 class="black capitalize"><?php echo $role_name; ?></h2></li>
+				<li class="person sub-head quicksearch-match <?php echo $role->slug; ?>"><h2 class="black capitalize"><?php echo $role_name; ?></h2></li>
 			<?php while ($people_query->have_posts()) : $people_query->the_post(); ?>
 				<li class="person <?php echo get_the_directory_filters($post);?> <?php echo get_the_roles($post); ?>">
 					<div class="row">
