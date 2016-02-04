@@ -26,13 +26,13 @@ Template Name: People Directory
 
 <div class="row wrapper radius10">
 <div class="small-12 columns">
-	<section class="row">
+	<main class="content row" role="main">
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-			<h2><?php the_title();?></h2>
+			<h1 class="page-title"><?php the_title();?></h1>
 		<?php endwhile; endif; ?>
 		<?php $theme_option = flagship_sub_get_global_options();
 				if ( $theme_option['flagship_sub_directory_search']  == '1' ) { get_template_part('parts', 'directory-search'); } ?>
-	</section>
+	</main>
 
 
 
@@ -56,28 +56,37 @@ Template Name: People Directory
 				<li class="person <?php echo get_the_directory_filters($post);?> <?php echo get_the_roles($post); ?>">
 					<div class="row">
 						<div class="small-12 columns">
-							<a href="<?php the_permalink();?>" title="<?php the_title(); ?>" class="field">
-							<?php if ( has_post_thumbnail()) : the_post_thumbnail('directory', array('class' => 'padding-five floatleft hide-for-small')); endif; ?>			    
-									<h4 class="no-margin"><?php the_title(); ?></h4></a>
-									<?php if ( get_post_meta($post->ID, 'ecpt_position', true) ) : ?><h6><?php echo get_post_meta($post->ID, 'ecpt_position', true); ?></h6><?php endif; ?>
-									<?php if ( get_post_meta($post->ID, 'ecpt_degrees', true) ) : ?><?php echo get_post_meta($post->ID, 'ecpt_degrees', true); ?><?php endif; ?>
-									<p class="contact no-margin">
-										<?php if ( get_post_meta($post->ID, 'ecpt_phone', true) ) : ?>
-											<span class="icon-mobile"><?php echo get_post_meta($post->ID, 'ecpt_phone', true); ?></span>
-										<?php endif; ?>
-										<?php if ( get_post_meta($post->ID, 'ecpt_fax', true) ) : ?>
-											<span class="icon-printer"><?php echo get_post_meta($post->ID, 'ecpt_fax', true); ?></span>
-										<?php endif; ?>
-										<?php if ( get_post_meta($post->ID, 'ecpt_email', true) ) : ?>
-											<span class="icon-mail"><a href="mailto:<?php echo get_post_meta($post->ID, 'ecpt_email', true); ?>">
-											
-											<?php echo get_post_meta($post->ID, 'ecpt_email', true); ?> </a></span>
-										<?php endif; ?>
-										<?php if ( get_post_meta($post->ID, 'ecpt_office', true) ) : ?>
-											<span class="icon-location"><?php echo get_post_meta($post->ID, 'ecpt_office', true); ?></span>
-										<?php endif; ?>
-									</p>
-						<?php if ( get_post_meta($post->ID, 'ecpt_expertise', true) ) : ?><p><b>Research Interests:&nbsp;</b><?php echo get_post_meta($post->ID, 'ecpt_expertise', true); ?></p><?php endif; ?>
+							
+							<?php if ( has_post_thumbnail()) :?>
+								<a href="<?php the_permalink();?>" title="<?php the_title(); ?>" class="field">
+									<?php the_post_thumbnail('directory', array('class' => 'padding-five floatleft hide-for-small'));?>
+								</a> 
+							<?php endif; ?>			    
+								<h4 class="no-margin"><a href="<?php the_permalink();?>" title="<?php the_title(); ?>" class="field"><?php the_title(); ?></a></h4>
+
+								<?php if ( get_post_meta($post->ID, 'ecpt_position', true) ) : ?><h5><?php echo get_post_meta($post->ID, 'ecpt_position', true); ?></h5><?php endif; ?>
+								<?php if ( get_post_meta($post->ID, 'ecpt_degrees', true) ) : ?><?php echo get_post_meta($post->ID, 'ecpt_degrees', true); ?><?php endif; ?>
+								<p class="contact no-margin">
+									<?php if ( get_post_meta($post->ID, 'ecpt_phone', true) ) : ?>
+										<span class="icon-mobile"><?php echo get_post_meta($post->ID, 'ecpt_phone', true); ?></span>
+									<?php endif; ?>
+									<?php if ( get_post_meta($post->ID, 'ecpt_fax', true) ) : ?>
+										<span class="icon-printer"><?php echo get_post_meta($post->ID, 'ecpt_fax', true); ?></span>
+									<?php endif; ?>
+									<?php if ( get_post_meta($post->ID, 'ecpt_email', true) ) : ?>
+										<span class="icon-mail"><a href="mailto:<?php echo get_post_meta($post->ID, 'ecpt_email', true); ?>">
+										
+										<?php echo get_post_meta($post->ID, 'ecpt_email', true); ?> </a></span>
+									<?php endif; ?>
+									<?php if ( get_post_meta($post->ID, 'ecpt_office', true) ) : ?>
+										<span class="icon-location"><?php echo get_post_meta($post->ID, 'ecpt_office', true); ?></span>
+									<?php endif; ?>
+								</p>
+						<?php if ( get_post_meta($post->ID, 'ecpt_expertise', true) ) : ?>
+							<p><strong>Research Interests:&nbsp;</strong>
+								<?php echo get_post_meta($post->ID, 'ecpt_expertise', true); ?>
+							</p>
+						<?php endif; ?>
 					</div>
 				</li>		
 		<?php endwhile; endif; } wp_reset_postdata(); ?>

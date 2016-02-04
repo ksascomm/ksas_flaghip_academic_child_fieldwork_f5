@@ -37,6 +37,10 @@ body {
 	padding-right: 0;
 }
 
+h1.page-title.home {
+    font-size: 1.5rem;
+}
+
 .nav-bar > li { float: left; display: block; position: relative; padding: 0; margin: 0;  line-height: 72px;  }
 .nav-bar > li.active { background: #255682; }
 .nav-bar > li.active > a { color: white; cursor: default; }
@@ -274,6 +278,10 @@ h5.archive {
 .post {
     background: #f2f2f2;
     border: 1px solid #ebebeb;
+}
+
+.post h2 {
+	font-size: 1.125rem;
 }
 
 .featured img {
