@@ -443,16 +443,3 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2fcfcfc', e
 #main_nav ul li.current_page_item {background: none !important;}
 
 #menu-footer-links a { color: #FFF !important;}
-
-
-/*IE9 Queries*/
-@media (min-width: 1023px) {
-    #mobile-nav {
-    display: none !important;
-  }
-}
-@media (max-width: 1023px) {
-    #desktop-nav {
-    display: none;
-  }
-}
