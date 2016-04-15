@@ -8,7 +8,7 @@ Template Name: People Directory
 	$theme_option = flagship_sub_get_global_options();
 	$roles = get_terms('role'); 
 	$filters = get_terms('filter', array(
-						'orderby'       => 'name', 
+						'orderby'       => 'ID', 
 						'order'         => 'ASC',
 						'hide_empty'    => true, 
 						));
