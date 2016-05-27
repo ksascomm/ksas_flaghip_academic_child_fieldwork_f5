@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/style.css">
   
   <!-- Modernizr and Jquery Script -->
-  <script src="<?php echo get_template_directory_uri() ?>/assets/js/vendor/ksas-modernizr.js"></script>
+  <script src="<?php echo get_template_directory_uri() ?>/assets/js/vendor/modernizr.min.js"></script>
   <?php wp_enqueue_script('jquery', true); ?> 
   <?php wp_head(); ?>
 
