@@ -26,7 +26,7 @@ Template Name: People Directory
 
 <div class="row wrapper radius10">
 <div class="small-12 columns">
-	<main class="content row" role="main">
+	<main class="content row">
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<h1 class="page-title"><?php the_title();?></h1>
 		<?php endwhile; endif; ?>
