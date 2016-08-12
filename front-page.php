@@ -38,13 +38,15 @@
             <?php while ($latest_post_query->have_posts()) : $latest_post_query->the_post(); ?>
                     <div class="row post-container">
                         <article class="small-11 columns centered post">
-                            <a href="<?php the_permalink(); ?>">
-                                <div class="row featured">
-                                        <?php if ( has_post_thumbnail()) { the_post_thumbnail('large', array('align'=>'center')); }?>
-                                </div>
-                                <h5><?php the_title(); ?></h5>
-                                <?php the_excerpt(); ?>
-                            </a>
+                            <div class="row featured">
+                                    <?php if ( has_post_thumbnail()) { the_post_thumbnail('large', array('align'=>'center')); }?>
+                            </div>
+                            <h5>
+                                <a href="<?php the_permalink(); ?>">
+                                    <?php the_title(); ?>
+                                </a>
+                            </h5>
+                            <?php the_excerpt(); ?>
                         </article>
                     </div>
             <?php endwhile; ?>
@@ -63,9 +65,8 @@
     	           <?php while ($news_query->have_posts()) : $news_query->the_post(); ?>
     	                <div class="small-12 medium-4 columns post-container">
     	                    <div class="row">
-    	                        <article class="small-11 columns centered post">
-            	                    <a href="<?php the_permalink();?>" title="<?php the_title(); ?>">
-                	                    <?php if(has_post_thumbnail()) { ?>
+    	                       <article class="small-11 columns centered post">
+            	                   <?php if(has_post_thumbnail()) { ?>
                 	                        <div class="row">
                 	                            <div class="small-12 columns">
                 	                                <?php the_post_thumbnail('rss', array('align'=>'center')); ?>
@@ -74,7 +75,11 @@
                                         <?php } ?>
                                         <div class="row">
                                             <div class="small-12 columns">
-                                                <h5><?php the_title(); ?></h5>
+                                                <h5>
+                                                     <a href="<?php the_permalink(); ?>">
+                                                        <?php the_title(); ?>
+                                                    </a>
+                                                </h5>
                                                 <?php the_excerpt(); ?>
                                             </div>
                                         </div>
@@ -85,7 +90,11 @@
     	           <?php endwhile; ?>
 	        </div>
         <div class="row">
-		    <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>"><h5 class="black">View All <?php echo $theme_option['flagship_sub_feed_name']; ?></h5></a>
+		    <h5>
+                <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">
+                    View All <?php echo $theme_option['flagship_sub_feed_name']; ?>
+                </a>
+            </h5>
 		</div>
 		<?php endif; ?>
 	</div>
