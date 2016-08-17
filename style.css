@@ -3,7 +3,7 @@ Theme Name: 	Fieldwork/Blog (Flagship Style) Foundation 5
 Description: 	For fieldwork sites and blogs
 Author: 		Cara Peckens
 Author URI: 	http://krieger.jhu.edu/communications/web
-Version: 		1.0
+Version: 		2.0
 Template: ksas_flagship_academic_f5
 */
 
@@ -292,10 +292,6 @@ h5.archive {
 	font-size: 1.125rem;
 }
 
-.featured img {
-    margin-left: 20px;
-}
-
 .home .panel.callout {
     margin-top: 53px;
 }
@@ -414,17 +410,6 @@ body.purple .callout.panel {
 	background: rgba(0,0,0,.8)
 ;}
 /*********OVERRIDES*************/
-.sidebar_bg {
-	background: #cecece;
-background: -moz-linear-gradient(left, rgba(252,252,252,1) 0%, rgba(255,255,255,1) 66.1%, rgba(206,206,206,1) 66.2%, rgba(206,206,206,1) 100%);
-background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(252,252,252,1)), color-stop(66.1%,rgba(255,255,255,1)), color-stop(66.2%,rgba(206,206,206,1)), color-stop(100%,rgba(206,206,206,1)));
-background: -webkit-linear-gradient(left, rgba(252,252,252,1) 0%,rgba(255,255,255,1) 66.1%,rgba(206,206,206,1) 66.2%,rgba(206,206,206,1) 100%);
-background: -o-linear-gradient(left, rgba(252,252,252,1) 0%,rgba(255,255,255,1) 66.1%,rgba(206,206,206,1) 66.2%,rgba(206,206,206,1) 100%);
-background: -ms-linear-gradient(left, rgba(252,252,252,1) 0%,rgba(255,255,255,1) 66.1%,rgba(206,206,206,1) 66.2%,rgba(206,206,206,1) 100%);
-background: linear-gradient(to right, rgba(252,252,252,1) 0%,rgba(255,255,255,1) 66.1%,rgba(206,206,206,1) 66.2%,rgba(206,206,206,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2fcfcfc', endColorstr='#cecece',GradientType=1 );
-	margin-bottom: 60px;
-}
 
 .button {
 	margin-right: 7px;

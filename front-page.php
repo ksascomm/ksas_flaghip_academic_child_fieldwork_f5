@@ -52,7 +52,7 @@
             <?php endwhile; ?>
                 </div>
         <?php endif; ?>
-            <main class="small-12 medium-5 columns panel callout radius10 last">
+            <main class="small-12 medium-6 columns panel callout radius10 last">
                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                     <h1 class="page-title home">About the <?php echo get_bloginfo ( 'description' ); ?> <?php echo get_bloginfo( 'title' ); ?></h1>
                     <?php the_content(); ?>
