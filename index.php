@@ -1,7 +1,7 @@
 <?php get_header();    $theme_option = flagship_sub_get_global_options(); ?>
 <div class="row wrapper radius10" id="page" role="main">
 	<div class="small-12 columns">
-		<section class="content small-10 columns">
+		<div class="content small-10 columns">
 		<h2><?php echo $theme_option['flagship_sub_feed_name']; ?></h2>
 		<?php 
 			$paged = (get_query_var('paged')) ? (int) get_query_var('paged') : 1;
@@ -42,7 +42,7 @@
 		<div class="row">
 			<?php flagship_pagination($news_archive_query->max_num_pages); ?>		
 		</div>	
-		</section>
+		</div>
 	</div>	<!-- End main content (left) section -->
 </div> <!-- End #landing -->
 <?php get_footer(); ?>
