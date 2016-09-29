@@ -24,7 +24,7 @@
 <div class="row hide-for-mobile">
     <div id="slider" class="small-12 columns radius10 no-gutter">
         <div class="slide">
-            <img src="<?php header_image(); ?>" class="radius10" />
+            <img src="<?php header_image(); ?>" class="radius10" alt="header image"/>
         </div>
     </div>
 </div>
