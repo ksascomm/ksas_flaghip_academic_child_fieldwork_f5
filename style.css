@@ -425,6 +425,6 @@ body.purple .callout.panel {
 
 .white {color: #FFF !important;}
 
-#main_nav ul li.current_page_item {background: none !important;}
+/*#main_nav ul li.current_page_item {background: none !important;}*/
 
 #menu-footer-links a { color: #FFF !important;}
