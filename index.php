@@ -2,7 +2,7 @@
 <div class="row wrapper radius10" id="page">
 	<div class="small-12 columns">
 	<?php locate_template('parts/nav-breadcrumbs.php', true, false);?>
-		<main class="content archive">
+		<main class="content post-archive">
 			<h1 class="page-title"><?php echo $theme_option['flagship_sub_feed_name']; ?></h1>
 			<?php 
 				$paged = (get_query_var('paged')) ? (int) get_query_var('paged') : 1;
