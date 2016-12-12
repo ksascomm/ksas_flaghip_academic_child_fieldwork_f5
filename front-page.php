@@ -39,7 +39,7 @@
                     <div class="row post-container">
                         <article class="small-11 columns centered post">
                             <div class="row featured">
-                                    <?php if ( has_post_thumbnail()) { the_post_thumbnail('large', array('align'=>'center')); }?>
+                                    <?php if ( has_post_thumbnail()) { the_post_thumbnail('large'); }?>
                             </div>
                             <h5>
                                 <a href="<?php the_permalink(); ?>">
@@ -69,7 +69,7 @@
             	                   <?php if(has_post_thumbnail()) { ?>
                 	                        <div class="row">
                 	                            <div class="small-12 columns">
-                	                                <?php the_post_thumbnail('rss', array('align'=>'center')); ?>
+                	                                <?php the_post_thumbnail('rss'); ?>
                 	                            </div>
                 	                        </div>
                                         <?php } ?>
