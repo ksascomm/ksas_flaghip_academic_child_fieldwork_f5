@@ -21,7 +21,7 @@
         ?>
 
 <?php if( get_header_image() != '' ) { ?>
-<div class="row hide-for-mobile">
+<div class="row hide-for-mobile" role="marquee">
     <div id="slider" class="small-12 columns radius10 no-gutter">
         <div class="slide">
             <img src="<?php header_image(); ?>" class="radius10" alt="header image"/>
@@ -37,27 +37,27 @@
                     <h3>Latest <?php echo $theme_option['flagship_sub_feed_name']; ?></h3>
             <?php while ($latest_post_query->have_posts()) : $latest_post_query->the_post(); ?>
                     <div class="row post-container">
-                        <article class="small-11 columns centered post">
+                      <article class="small-11 columns centered post news-item" aria-labelledby="post-<?php the_ID(); ?>" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
                             <div class="row featured">
-                                    <?php if ( has_post_thumbnail()) { the_post_thumbnail('large'); }?>
+                                <?php the_post_thumbnail('large'); array('class'  => "floatleft", 'itemprop' => 'image'); ?>
                             </div>
-                            <h5>
-                                <a href="<?php the_permalink(); ?>">
-                                    <?php the_title(); ?>
-                                </a>
-                            </h5>
-                            <?php the_excerpt(); ?>
+                                <h1 itemprop="headline">
+                                    <a href="<?php the_permalink();?>" title="<?php the_title(); ?>" id="post-<?php the_ID(); ?>"><?php the_title(); ?></a>
+                                </h1>
+                                <div class="entry-content" itemprop="text"> 
+                                    <?php the_excerpt(); ?>
+                                </div>
                         </article>
                     </div>
             <?php endwhile; ?>
                 </div>
         <?php endif; ?>
-            <main class="small-12 medium-6 columns panel callout radius10 last">
+            <div class="small-12 medium-6 columns panel callout radius10 last">
                 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                     <h1 class="page-title home">About the <?php echo get_bloginfo ( 'description' ); ?> <?php echo get_bloginfo( 'title' ); ?></h1>
                     <?php the_content(); ?>
                 <?php endwhile; endif; ?>
-            </main>
+            </div>
         </div>
 	    <?php if ( $news_query->have_posts() ) : ?>
 	        <div class="row">
@@ -65,25 +65,24 @@
     	           <?php while ($news_query->have_posts()) : $news_query->the_post(); ?>
     	                <div class="small-12 medium-4 columns post-container">
     	                    <div class="row">
-    	                       <article class="small-11 columns centered post">
+    	                       <article class="small-11 columns centered post news-item" aria-labelledby="post-<?php the_ID(); ?>" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
             	                   <?php if(has_post_thumbnail()) { ?>
-                	                        <div class="row">
-                	                            <div class="small-12 columns">
-                	                                <?php the_post_thumbnail('rss'); ?>
-                	                            </div>
-                	                        </div>
-                                        <?php } ?>
+            	                        <div class="row">
+            	                            <div class="small-12 columns">
+                                                <?php the_post_thumbnail('rss'); array('class'  => "floatleft", 'itemprop' => 'image'); ?>
+            	                            </div>
+            	                        </div>
+                                    <?php } ?>
                                         <div class="row">
                                             <div class="small-12 columns">
-                                                <h5>
-                                                     <a href="<?php the_permalink(); ?>">
-                                                        <?php the_title(); ?>
-                                                    </a>
-                                                </h5>
-                                                <?php the_excerpt(); ?>
+                                                <h1 itemprop="headline">
+                                                    <a href="<?php the_permalink(); ?>" id="post-<?php the_ID(); ?>"><?php the_title();?></a>
+                                                </h1>
+                                                <div class="entry-content" itemprop="text"> 
+                                                    <?php the_excerpt(); ?>
+                                                </div>
                                             </div>
                                         </div>
-            	                    </a>
     	                        </article>
     	                    </div>
     	                </div>
