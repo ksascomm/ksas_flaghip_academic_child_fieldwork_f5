@@ -21,7 +21,7 @@
         ?>
 
 <?php if( get_header_image() != '' ) { ?>
-<div class="row hide-for-mobile" role="marquee">
+<div class="row hide-for-mobile" role="img" aria-label="hero image area">
     <div id="slider" class="small-12 columns radius10 no-gutter">
         <div class="slide">
             <img src="<?php header_image(); ?>" class="radius10" alt="header image"/>
