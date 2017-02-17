@@ -20,7 +20,7 @@
 
         ?>
 
-<main>
+<main id="page">
     <?php if( get_header_image() != '' ) { ?>
     <div class="row hide-for-mobile" aria-label="hero image area">
         <div id="slider" class="small-12 columns radius10 no-gutter">
@@ -31,7 +31,7 @@
     </div>
     <?php } ?>
 
-    <div class="row wrapper radius10" id="page">
+    <div class="row wrapper radius10">
     	<div class="small-12 columns">
             <?php if ( $latest_post_query->have_posts() ) : ?>
                     <div class="small-12 medium-6 columns">
